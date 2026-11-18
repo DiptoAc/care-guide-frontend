@@ -4,7 +4,7 @@ This is a small, dependency-free frontend for the Care Notes API.
 
 ## Run
 
-1. Start MongoDB and the backend using the instructions in `../Backend/README.md`.
+1. Start MongoDB and the backend using the [Backend setup guide](https://github.com/DiptoAc/care-guide-backend#care-notes-api).
 2. From this directory, run `npm start`.
 3. Open `http://localhost:3000`.
 
