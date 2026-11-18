@@ -1,0 +1,6 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  API_BASE_URL = "https://care-guide-backend-tyc6.onrender.com/api"

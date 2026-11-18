@@ -26,4 +26,8 @@ Admin tools require an account whose role is `admin`; public registration always
 2. Set the project root to the repository root and the build command to `npm run build`.
 3. Set `API_BASE_URL` to the deployed backend URL followed by `/api`, for example `https://care-guide-backend.onrender.com/api`.
 4. Deploy. The build writes the API URL into `dist/api-config.js`; no API URL needs to be manually entered by visitors.
-5. Set the backend's `CORS_ORIGIN` to the exact deployed frontend origin and redeploy/restart the backend.
+5. Add the deployed frontend origin to the backend's `CORS_ORIGIN` setting and redeploy/restart the backend.
+
+## Deploy to Netlify
+
+The included `netlify.toml` sets the build command, publish directory, and production API URL. Import this repository into Netlify and deploy from its root. Add the Netlify production domain to the backend's comma-separated `CORS_ORIGIN` list alongside the Vercel domain so both frontends can use the API.
