@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f7f4">
+    <title>Care Notes</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/api-config.js" defer></script>
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Care Notes home">
+        <span class="brand-mark">C</span>
+        <span>care<span class="brand-light">notes</span></span>
+      </a>
+      <div class="header-right">
+        <span id="connection-status" class="connection-status">API not checked</span>
+        <div id="account-bar" class="account-bar" hidden>
+          <span id="account-name"></span>
+          <span id="account-role" class="role-badge"></span>
+          <button id="logout-button" class="button button-quiet button-small" type="button">Sign out</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="auth-view" class="auth-layout">
+        <div class="auth-intro">
+          <p class="eyebrow">A calmer space for your thoughts</p>
+          <h1>Keep the things<br>that matter close.</h1>
+          <p class="intro-copy">A private place for notes, ideas and the people you share them with.</p>
+          <div class="intro-art" aria-hidden="true">
+            <span class="art-card art-card-back"></span>
+            <span class="art-card art-card-front"><i></i><i></i><i></i></span>
+            <span class="art-sparkle">✳</span>
+          </div>
+        </div>
+        <div class="auth-card">
+          <div class="auth-switch" role="tablist" aria-label="Account options">
+            <button type="button" class="auth-tab active" data-auth-mode="login" role="tab" aria-selected="true">Sign in</button>
+            <button type="button" class="auth-tab" data-auth-mode="register" role="tab" aria-selected="false">Create account</button>
+          </div>
+          <div id="auth-form-container"></div>
+          <div class="api-setting">
+            <label for="api-url">Backend API</label>
+            <input id="api-url" type="url" value="http://localhost:5000/api" autocomplete="url">
+            <p>Change this if your backend runs somewhere else.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="dashboard-view" class="dashboard" hidden>
+        <aside class="sidebar">
+          <p class="sidebar-label">Workspace</p>
+          <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+            <button class="nav-link active" type="button" data-view="notes"><span>▤</span> Notes</button>
+            <button class="nav-link" type="button" data-view="posts"><span>◉</span> Community posts</button>
+            <button class="nav-link" type="button" data-view="my-posts"><span>↗</span> My posts</button>
+            <div id="admin-nav" hidden>
+              <p class="sidebar-label admin-label">Administration</p>
+              <button class="nav-link" type="button" data-view="users"><span>♧</span> Manage users</button>
+              <button class="nav-link" type="button" data-view="interests"><span>⌘</span> Interests</button>
+            </div>
+          </nav>
+          <div class="sidebar-footer">
+            <span class="online-dot"></span>
+            Connected to your workspace
+          </div>
+        </aside>
+        <section class="workspace">
+          <div id="notice" class="notice" role="status" aria-live="polite" hidden></div>
+          <div id="view-content"></div>
+        </section>
+      </section>
+    </main>
+    <footer class="site-footer">Care Notes <span>·</span> Thoughtfully yours</footer>
+  </body>
+</html>
